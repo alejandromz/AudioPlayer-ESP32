@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name "Modulos")(type "KiCad")(uri "${KIPRJMOD}/Modulos.kicad_sym")(options "")(descr ""))
+  (lib (name "i2c_lcd")(type "KiCad")(uri "${KIPRJMOD}/i2c_lcd.kicad_sym")(options "")(descr ""))
+  (lib (name "Serialrs232")(type "KiCad")(uri "${KIPRJMOD}/Serialrs232.kicad_sym")(options "")(descr ""))
+)
