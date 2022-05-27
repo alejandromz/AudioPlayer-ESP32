@@ -2231,7 +2231,7 @@
     (property "Value" "100n" (id 1) (at 125.73 68.5799 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (id 2) (at 120.9548 63.5 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (id 2) (at 120.9548 63.5 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 121.92 67.31 0)
@@ -2278,7 +2278,7 @@
     (uuid 6926fa33-b483-4b27-9021-c8c173bee123)
     (property "Reference" "C1" (id 0) (at 26.67 49.53 90))
     (property "Value" "100n" (id 1) (at 26.67 52.07 90))
-    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (id 2) (at 30.48 56.1848 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (id 2) (at 30.48 56.1848 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 26.67 57.15 0)
@@ -2615,7 +2615,7 @@
     (property "Value" "100n" (id 1) (at 125.73 119.3799 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (id 2) (at 120.9548 114.3 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (id 2) (at 120.9548 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 121.92 118.11 0)
@@ -2723,7 +2723,7 @@
   (symbol (lib_id "power:GND") (at 218.44 62.23 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid dc494e81-b50b-453c-ba8e-8cfe2ab07aab)
-    (property "Reference" "#PWR?" (id 0) (at 218.44 68.58 0)
+    (property "Reference" "#PWR0119" (id 0) (at 218.44 68.58 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 218.44 67.31 0))
@@ -2741,7 +2741,7 @@
     (uuid e4e67376-2997-4cd7-8772-d58858687656)
     (property "Reference" "C2" (id 0) (at 77.47 49.53 90))
     (property "Value" "100n" (id 1) (at 77.47 52.07 90))
-    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (id 2) (at 81.28 56.1848 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (id 2) (at 81.28 56.1848 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 77.47 57.15 0)
@@ -2877,7 +2877,7 @@
   (symbol (lib_id "power:GND") (at 219.71 82.55 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid f2b6e32b-edf2-4804-861b-99e72f72470c)
-    (property "Reference" "#PWR?" (id 0) (at 219.71 88.9 0)
+    (property "Reference" "#PWR0104" (id 0) (at 219.71 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 219.71 87.63 0))
@@ -2923,6 +2923,9 @@
     (path "/a10a4e87-dfbc-406d-a434-990869e3d037"
       (reference "#PWR0103") (unit 1) (value "+4V") (footprint "")
     )
+    (path "/f2b6e32b-edf2-4804-861b-99e72f72470c"
+      (reference "#PWR0104") (unit 1) (value "GND") (footprint "")
+    )
     (path "/1d8298f6-5278-42d3-9c9d-3fd92e9421e2"
       (reference "#PWR0105") (unit 1) (value "+4V") (footprint "")
     )
@@ -2965,6 +2968,9 @@
     (path "/2e8e86ad-323a-42bf-841c-e4854c61d3af"
       (reference "#PWR0118") (unit 1) (value "+4V") (footprint "")
     )
+    (path "/dc494e81-b50b-453c-ba8e-8cfe2ab07aab"
+      (reference "#PWR0119") (unit 1) (value "GND") (footprint "")
+    )
     (path "/bfb9a383-1f8c-4547-81c9-2c710f5dc4f6"
       (reference "#PWR0120") (unit 1) (value "GND") (footprint "")
     )
@@ -2992,26 +2998,20 @@
     (path "/23d937e2-5baa-46c7-86c9-a495bad8e666"
       (reference "#PWR0128") (unit 1) (value "+3.3V") (footprint "")
     )
-    (path "/dc494e81-b50b-453c-ba8e-8cfe2ab07aab"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/f2b6e32b-edf2-4804-861b-99e72f72470c"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
-    )
     (path "/78d2299b-0fcd-4ea5-ba66-3ab5aaf4d0b5"
       (reference "BT1") (unit 1) (value "Battery_Cell") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/6926fa33-b483-4b27-9021-c8c173bee123"
-      (reference "C1") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C1") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/e4e67376-2997-4cd7-8772-d58858687656"
-      (reference "C2") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C2") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/58f6bfb6-8660-4af0-9f62-3d217f193d18"
-      (reference "C3") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C3") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/ca116935-d445-4a5c-9020-376614502193"
-      (reference "C4") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C4") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/f0913a11-bf78-4ce7-8e04-139da3800ce3"
       (reference "CB1") (unit 1) (value "CircuitBreaker_1P") (footprint "Button_Switch_THT:SW_DIP_SPSTx01_Slide_9.78x4.72mm_W7.62mm_P2.54mm")
