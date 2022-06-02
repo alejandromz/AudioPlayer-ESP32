@@ -24,23 +24,27 @@ spisd = SoftSPI(-1,
                 mosi=Pin(12),
                 sck=Pin(14))
 sd = SDCard(spisd, Pin(27))
+
 vfs=os.VfsFat(sd)
 os.mount(vfs, '/sd')
-os.chdir('sd')
-
+owd = os.getcwd()
+old_dir=owd
+## os.chdir('sd')
 
 threshold = 500
 directorio = os.listdir()
-directorio = [st[0:12] for st in directorio]
-    
+## directorio.append('Return')
+directorio_dsp = [st[0:12] for st in directorio]
 pos = 0
 
 lcd.clear()
-lcd.putstr('{}\n{}'.format(directorio[pos],directorio[pos+1]))
+lcd.putstr('{}\n{}'.format(directorio_dsp[pos],directorio_dsp[pos+1]))
+print(owd)
 
 while True:
     x_val = x.read()
     y_val = y.read()
+    
     if y_val < threshold:
         pos = pos-1
         if pos<0:
@@ -49,12 +53,46 @@ while True:
         pos = pos+1
         if pos>len(directorio)-1:
             pos = len(directorio)-1
-    ## print("Current_position:{},{}".format(x_val,y_val))
-    ## print('Pin_Value=',sw.value())
+    
+    if sw.value()==0:
+        if directorio[pos] == 'Return':
+            try:
+                lst = old_dir.split('/')
+                print(lst[0:-2])
+                old_dir=''
+                
+                if len(lst) > 2:
+                    for item in lst[0:-2]:
+                        ## print(item)
+                        if item != '':
+                            old_dir=old_dir+'/'+item
+                else:
+                    old_dir=owd
+                print(old_dir)
+            except:
+                print('Error')
+                
+            os.chdir(old_dir)
+            directorio = os.listdir()
+            directorio.append('Return')
+            directorio_dsp = [st[0:12] for st in directorio]
+            pos = 0
+        else:
+            try:
+                os.chdir(directorio[pos])
+                old_dir=old_dir+directorio[pos]+'/'
+                print(old_dir)
+                directorio = os.listdir()
+                directorio.append('Return')
+                directorio_dsp = [st[0:12] for st in directorio]
+                pos = 0
+            except:
+                print('No es un directorio.')
+    
     lcd.clear()
     if pos == len(directorio)-1:
-        lcd.putstr('{}\n>{}'.format(directorio[pos-1],directorio[pos]))
+        lcd.putstr('{}\n>{}'.format(directorio_dsp[pos-1],directorio_dsp[pos]))
     else:
-        lcd.putstr('>{}\n{}'.format(directorio[pos],directorio[pos+1]))
+        lcd.putstr('>{}\n{}'.format(directorio_dsp[pos],directorio_dsp[pos+1]))
     sleep_ms(300)
     
