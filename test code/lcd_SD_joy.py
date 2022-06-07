@@ -29,11 +29,9 @@ vfs=os.VfsFat(sd)
 os.mount(vfs, '/sd')
 owd = os.getcwd()
 old_dir=owd
-## os.chdir('sd')
 
 threshold = 500
 directorio = os.listdir()
-## directorio.append('Return')
 directorio_dsp = [st[0:12] for st in directorio]
 pos = 0
 
