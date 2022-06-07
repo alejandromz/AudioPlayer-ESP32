@@ -12,6 +12,6 @@ print('Directory: {}'.format(os.listdir()))
 vfs=os.VfsFat(sd)
 os.mount(vfs, '/sd')
 print('Directory: {}'.format(os.listdir()))
-os.chdir('sd')
-print('Directory SD: {}'.format(os.listdir()))
+## os.chdir('sd')
+## print('Directory SD: {}'.format(os.listdir()))
 

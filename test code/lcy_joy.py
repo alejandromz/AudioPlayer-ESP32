@@ -1,8 +1,9 @@
 from time import sleep_ms, ticks_ms
 from machine import I2C, Pin
 from i2c_lcd import I2cLcd
-from machine import Pin, ADC
+from machine import Pin, ADC, SoftSPI
 from time import sleep_ms
+from sdcard import SDCard
 
 x = ADC(Pin(34))
 y = ADC(Pin(35))
