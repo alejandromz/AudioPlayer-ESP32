@@ -12,14 +12,10 @@ spisd = SoftSPI(-1,
                 sck=Pin(14))
 sd = SDCard(spisd, Pin(27))
 
-# print('Directory: {}'.format(os.listdir()))
 vfs=os.VfsFat(sd)
 os.mount(vfs, '/sd')
-# os.chdir('sd')
-# print('Directory: {}'.format(os.listdir()))
 
 WAV_FILE = 'taunt-16k-16bits-mono-12db.wav'
-# WAV_FILE = 'PRUEBADJ.wav'
 
 # ----------------------------------------------------------------------------
 
@@ -27,13 +23,12 @@ bck_pin = Pin(22)   # Pin BCLK
 ws_pin = Pin(21)    # Pin LRC
 sdout_pin = Pin(23) # Pin Din
 
-audio_out = I2S(1,                                  # create I2S peripheral to write audio
-                sck=bck_pin, ws=ws_pin, sd=sdout_pin,   # sample data to an Adafruit I2S Amplifier
-                mode=I2S.TX,  # breakout board, 
-                bits=16,                        # based on MAX98357A device
+audio_out = I2S(1,
+                sck=bck_pin, ws=ws_pin, sd=sdout_pin,
+                mode=I2S.TX,
+                bits=16,
                 format=I2S.MONO,
                 rate=16000,
-                # rate=1411000,
                 ibuf=2000)
  
 wav_file = '/sd/{}'.format(WAV_FILE)
@@ -55,4 +50,4 @@ while  pos < wav_len:
     wav.seek(pos)
     wav.readinto(wav_samples_mv)
     
-print("C'est fini")
+print("Fin del audio.")
