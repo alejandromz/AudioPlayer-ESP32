@@ -15,10 +15,6 @@ sd = SDCard(spisd, Pin(27))
 vfs=os.VfsFat(sd)
 os.mount(vfs, '/sd')
 
-WAV_FILE = 'taunt-16k-16bits-mono-12db.wav'
-
-# ----------------------------------------------------------------------------
-
 bck_pin = Pin(22)   # Pin BCLK
 ws_pin = Pin(21)    # Pin LRC
 sdout_pin = Pin(23) # Pin Din
@@ -30,7 +26,10 @@ audio_out = I2S(1,
                 format=I2S.MONO,
                 rate=16000,
                 ibuf=2000)
- 
+
+# ---------------------------------------------------------
+
+WAV_FILE = 'taunt-16k-16bits-mono-12db.wav' 
 wav_file = '/sd/{}'.format(WAV_FILE)
 wav = open(wav_file,'rb')
 
@@ -41,9 +40,6 @@ pos = wav.seek(44)
 wav_samples = bytearray(1024)
 wav_samples_mv = memoryview(wav_samples)
 
-num_read = wav.readinto(wav_samples_mv)
-num_written = num_read
-num_pos = 0
 while  pos < wav_len:
     num_written = audio_out.write(wav_samples_mv)
     pos += num_written
